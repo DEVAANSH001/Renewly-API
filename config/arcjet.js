@@ -1,5 +1,5 @@
 import arcjet, { shield, detectBot, tokenBucket } from "@arcjet/node";
-import { ARCJET_API_KEY } from './env.js'
+import { ARCJET_API_KEY } from "./env.js";
 
 const aj = arcjet({
   key: ARCJET_API_KEY,
@@ -7,8 +7,8 @@ const aj = arcjet({
   rules: [
     shield({ mode: "LIVE" }),
     detectBot({
-      mode: "LIVE",
-      allow: [ "CATEGORY:SEARCH_ENGINE" ],
+      mode: "DRY_RUN",
+      allow: ["CATEGORY:SEARCH_ENGINE"],
     }),
     tokenBucket({
       mode: "LIVE",
